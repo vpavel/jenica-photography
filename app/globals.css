@@ -16,12 +16,48 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+html, body {
+  height: 100%;
+}
+
+/* For WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(to right, #3b82f6, #8b5cf6);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #a5b4fc;
+  border-radius: 5px;
+}
+
+/* For Firefox */
+::-moz-scrollbar {
+  width: 10px;
+}
+
+::-moz-scrollbar-track {
+  background: linear-gradient(to right, #3b82f6, #8b5cf6);
+}
+
+::-moz-scrollbar-thumb {
+  background-color: #a5b4fc;
+  border-radius: 5px;
+}
+
+/* For Microsoft Edge */
+::-ms-scrollbar {
+  width: 10px;
+}
+
+::-ms-scrollbar-track {
+  background: linear-gradient(to right, #3b82f6, #8b5cf6);
+}
+
+::-ms-scrollbar-thumb {
+  background-color: #a5b4fc;
+  border-radius: 5px;
 }
