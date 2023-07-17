@@ -14,11 +14,11 @@ const Carousel = ({ photos }: Props) => {
 
 	const goToNextImage = useCallback(() => {
 		setCurrentImage((prevImage) => (prevImage + 1) % photos.length);
-	}, [photos.length]);
+	}, [photos]);
 
 	const goToPreviousImage = useCallback(() => {
 		setCurrentImage((prevImage) => (prevImage - 1 + photos.length) % photos.length);
-	}, [photos.length]);
+	}, [photos]);
 
 	const handleSwipe = useCallback(
 		(direction: 'Left' | 'Right') => {
@@ -35,6 +35,10 @@ const Carousel = ({ photos }: Props) => {
 		onSwipedLeft: () => handleSwipe('Left'),
 		onSwipedRight: () => handleSwipe('Right'),
 	});
+
+	if (!photos || photos.length === 0) {
+		return null;
+	}
 
 	return (
 		<div className="relative" {...swipeHandlers}>
